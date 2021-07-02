@@ -12,11 +12,11 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         //Abrindo a tela de Login após 5 segundos
-        Handler(Looper.getMainLooper()).postDelayed({
-            //Iniciar a intent
-            val mIntent = Intent(this, MainActivity::class.java)
+      Handler(Looper.getMainLooper()).postDelayed({
+           //Iniciar a intent
+           val mIntent = Intent(this, MainActivity::class.java)
             startActivity(mIntent)
             finish()
-        }, 5000)
-    }
+       }, 5000)
+   }
 }

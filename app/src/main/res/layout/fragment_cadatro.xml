@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/yellow">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clBanner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="40dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/cvCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:layout_marginTop="2dp"
+            android:id="@+id/ivIcon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/icone_beermug"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvCard"
+        android:layout_width="0dp"
+        android:layout_height="600dp"
+        android:layout_margin="16dp"
+        android:elevation="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clBanner">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp">
+
+
+            <TextView
+                android:id="@+id/tvInformacao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INFORMAÇÕES"
+                android:textSize="24dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/etNomeCadastro"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:textColor="@color/gray"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etNomeCadastro"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Nome"
+                app:helperTextEnabled="true"
+                app:boxStrokeColor="@color/brown"
+                app:hintTextColor="@color/brown"
+                app:startIconDrawable="@drawable/ic_person_black_24dp"
+                app:startIconTint="@color/brown"
+                app:layout_constraintTop_toBottomOf="@id/tvInformacao"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/etEmailCadastro"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etEmailCadastro"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="E-mail"
+                app:helperTextEnabled="true"
+                app:startIconDrawable="@drawable/ic_email_black_24dp"
+                app:startIconTint="@color/brown"
+                app:boxStrokeColor="@color/brown"
+                app:hintTextColor="@color/brown"
+                app:layout_constraintTop_toBottomOf="@id/etNomeCadastro"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/etTelefone"
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etTelefone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Telefone/Celular"
+                app:startIconDrawable="@drawable/ic_call_black_24dp"
+                app:startIconTint="@color/brown"
+                app:helperTextEnabled="true"
+                app:boxStrokeColor="@color/brown"
+                app:hintTextColor="@color/brown"
+                app:layout_constraintTop_toBottomOf="@id/etEmailCadastro"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/etSenhaCadastro"
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etSenhaCadastro"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Senha"
+                app:startIconDrawable="@drawable/ic_lock_black_24dp"
+                app:startIconTint="@color/brown"
+                app:helperTextEnabled="true"
+                android:layout_marginTop="6dp"
+                app:boxStrokeColor="@color/brown"
+                app:hintTextColor="@color/brown"
+                app:layout_constraintTop_toBottomOf="@id/etTelefone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/etSenhaConfirma"
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberPassword"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etSenhaConfirma"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Digite novamente"
+                app:helperTextEnabled="true"
+                app:startIconDrawable="@drawable/ic_lock_black_24dp"
+                app:startIconTint="@color/brown"
+                app:boxStrokeColor="@color/brown"
+                app:hintTextColor="@color/brown"
+                app:layout_constraintTop_toBottomOf="@id/etSenhaCadastro"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/btCadastrar"
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberPassword"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <Button
+                android:id="@+id/btCadastrar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/lightyellow"
+                android:text="Cadastrar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etSenhaConfirma"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
